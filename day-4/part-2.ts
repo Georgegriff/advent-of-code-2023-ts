@@ -74,7 +74,7 @@ function parseGame(line: string, lineNumber: number): GameCard {
       cardNumbers: parseNumbers(cardNumbersStr),
     };
   } catch (e) {
-    throw new Error(`Error parsing Game ${lineNumber}: ${line}, cause: ${e}`);
+    throw new Error(`Error parsing Game ${lineNumber}: ${line}`, { cause: e });
   }
 }
 

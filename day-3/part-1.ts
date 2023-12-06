@@ -150,7 +150,7 @@ function checkLine(
     }
     return currentLineMap;
   } catch (e) {
-    throw new Error(`Line parse error: line: ${yPosition}, cause: ${e}`);
+    throw new Error(`Line parse error: line: ${yPosition}`, { cause: e });
   }
 }
 

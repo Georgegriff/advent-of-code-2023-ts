@@ -72,7 +72,7 @@ function parseGame(line: string, lineNumber: number): Game {
       requirements: gameRequirements,
     };
   } catch (e) {
-    throw new Error(`Error parsing Game ${lineNumber}: ${line}, cause: ${e}`);
+    throw new Error(`Error parsing Game ${lineNumber}: ${line}`, { cause: e });
   }
 }
 
