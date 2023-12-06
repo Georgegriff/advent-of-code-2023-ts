@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
 const dirname = () => path.dirname(fileURLToPath(import.meta.url));
 
 let logDebug = false;
-function debug(...args) {
+function debug(...args: unknown[]) {
   if (logDebug) {
     console.debug("[DEBUG]", ...args);
   }
