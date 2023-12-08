@@ -13,6 +13,14 @@ function debug(...args: unknown[]) {
   }
 }
 
+function parseNumber(roundNumber: string) {
+  const num = parseInt(roundNumber);
+  if (isNaN(num)) {
+    throw new Error(`Invalid number ${roundNumber}`);
+  }
+  return num;
+}
+
 async function processLines(fileName: string, onLine: (line: string) => void) {
   const rl = readline.createInterface({
     input: fs.createReadStream(path.join(dirname(), fileName)),
